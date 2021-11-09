@@ -4,16 +4,16 @@ import PokemonForm from "./PokemonForm";
 import Search from "./Search";
 import { Container } from "semantic-ui-react";
 
-function PokemonPage() {
+function PokemonPage({pokemons, onSearch, onNewPokemon}) {
   return (
     <Container>
       <h1>Pokemon Searcher</h1>
       <br />
-      <PokemonForm />
+      <PokemonForm onNewPokemon={onNewPokemon}/>
       <br />
-      <Search />
+      <Search onSearch={onSearch}/>
       <br />
-      <PokemonCollection />
+      <PokemonCollection pokemons={pokemons}/>
     </Container>
   );
 }
